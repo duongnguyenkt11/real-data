@@ -7,6 +7,7 @@ from copy import copy
 from functools import reduce
 from my_plots import myPlots
 from testUtilities import *
+from PsParser import PsParser
 from dataio import *
 from utilities import *
 from O import O
@@ -34,22 +35,28 @@ if __name__ == '__main__':
 # cleansed = truncDataDict(o.cleansed, 3000, 6000)
 # writePickle("/home/sotola/HOSE-3k-sample(2020-10-23).pickle")
 #%%
+#tik(); o = O(loadCleansedData()); tok()
 tik(); o = O(loadSamplePrickle()); tok()
-# tik(); o = O(loadCleansedData()); tok()
-tik(); o.calculateNNVolumes(); tok();tik(); o.calculateNNValues(); tok();o.numpyItUp();o.calculateTradedValues();
+tik(); o.calculateNNVolumes(); tok();tik(); o.calculateNNValues(); tok();o.numpyItUp();o.calculateTradedValues()
 _o = o
-#%%
+
+# o=O(_o.cleansed);tik(); o.calculateNNVolumes(); tok();tik(); o.calculateNNValues(); tok();o.numpyItUp()
+
+
 o.plot_BS_Pressure(file="/home/sotola/graphs/ApLucMuaBan.html2.html")
 o.plot_NN_Accumulated_Values(file="/home/sotola/graphs/NuocNgoaiLuyKe2.html")
 o.plot_NN_Velocity_Values(file="/home/sotola/graphs/VelocityNuocNgoai2.html")
 o.plot_NN_Liquidity_Bar(file="/home/sotola/graphs/ThanhKhoanNuocNgoai2.html")
 o.plot__Liquidity_Bar(file="/home/sotola/graphs/ThanhKhoanThiTruong2.html")
+
 #%%
 
-o=O(_o.cleansed);tik(); o.calculateNNVolumes(); tok();tik(); o.calculateNNValues(); tok();o.numpyItUp()
-
-
-
+########################################################################################################################
+#                                                     PHAI SINH STUFF                                                  #
+########################################################################################################################
+p = PsParser()
+x = 0
+print("All Done!")
 
 
 

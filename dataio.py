@@ -113,18 +113,14 @@ def isValidTime(time):
 #%%
 import os
 
-def grabFile(st = ""):
+def grabFiles(PATH="home/sotola/data", pattern="HOSE"):
     from os import listdir
     from os.path import isfile, join
-    onlyfiles = [f for f in listdir(PARSER.PS_DATA_DIRECTORY) if (
-            isfile(join(PARSER.PS_DATA_DIRECTORY, f)) &
-            f.__contains__(st) & (not f.__contains__("(")))]
+    onlyfiles = [f for f in listdir(PATH) if (
+            isfile(join(PATH, f)) &
+            f.__contains__(pattern) & (not f.__contains__("(")))]
     return onlyfiles
 
-files = grabFile("Phai")
-
-files = sorted([file for file in files if isValidTime(extractTime(file))])
-len(files)
 
 #%%
 

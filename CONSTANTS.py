@@ -51,4 +51,5 @@ class KEYS:
 class PARSER:
     FOO = "foo"
     PS_DATA_DIRECTORY = "/home/sotola/data/"
+    ATC_NUM_STR = "000000" # length must be = 6
 
