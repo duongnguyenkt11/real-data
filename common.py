@@ -1,5 +1,5 @@
 
-def exec3(cmd):
+def exec3(cmd): #
   print(f"****\n running: {cmd} ****")
   import subprocess
   process = subprocess.Popen(cmd.split(" "),
