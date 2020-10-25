@@ -59,7 +59,27 @@ x = 0
 print("All Done!")
 
 
+#%%
+from bServer import *
 
+from bokeh.io import show
+from bokeh.models import Button, CustomJS
+
+
+
+from bokeh.events import ButtonClick
+from bokeh import model
+def modify(doc):
+    button = Button(label="Foo", button_type="success")
+
+    def callback(event):
+        print('Python:Click')
+
+    button.on_event(ButtonClick, callback)
+    doc.add_root(column(o.plot_BS_Pressure2(), button))
+
+Base_server.show_timestamp()
+serv = Serv(handler=modify,run=True, view=True)
 
 
 

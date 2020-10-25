@@ -52,4 +52,6 @@ class PARSER:
     FOO = "foo"
     PS_DATA_DIRECTORY = "/home/sotola/data/"
     ATC_NUM_STR = "000000" # length must be = 6
+    SNAPSHOT_FILENAME = "SnapShot-PS-2020_10_23.json"
+
 

@@ -1,7 +1,7 @@
 from common import *
 from utilities import *
 from CONSTANTS import *
-from dataio import grabFiles
+from dataio import grabFiles, readFile
 import json, os
 
 DEBUG = True
@@ -14,6 +14,7 @@ class PsParser:
         self.files = [os.path.join(PATH, file) for file in files]
         self.raw = mmap(self.parseFile, self.files)
         self.data = mmap(self.parseDataPoint, self.raw)
+        self.rawDayData = readFile(os.path.join(PARSER.PS_DATA_DIRECTORY,PARSER.SNAPSHOT_FILENAME))
         if DEBUG: print(len(self.raw))
 
     @staticmethod
@@ -34,6 +35,6 @@ class PsParser:
 
 p = PsParser()
 #%%
-p.data[0]
 
+p.rawDayData
 

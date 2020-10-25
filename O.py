@@ -143,6 +143,12 @@ class O:
         p.line(self.Xs, self.cleansed[C.CSELLP], line_width=2, color="red")
         show(p)
 
+    def plot_BS_Pressure2(self, p=None, file=FN.PLOT_BUY_SELL_PRESSURE_FILE):
+        p = p = figure(plot_width=PC.WIDTH, plot_height=PC.HEIGHT, title="Apluc Mua Ban")
+        p.line(self.Xs, self.cleansed[C.CBUYP], line_width=2, color="green")
+        p.line(self.Xs, self.cleansed[C.CSELLP], line_width=2, color="red")
+        return p
+
 
     def plot_NN_Liquidity_Bar(self, file="/home/sotola/foo.html", p=None):
         def prep(seconds, vals, STEP=20, REVERSED=False): # Prepare Data
