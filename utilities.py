@@ -124,3 +124,15 @@ def intervalize(seconds, vals, STEP=10, intervals=None, accumulatorFunction=myMa
     bins = mmap(lambda indices: myMax(indices, vals), intervals)
     if beautiful: bins = mmap(lambda x: beautify(x, numDecimal=2), bins)
     return bins, mmap(lambda x: representInterval(x, seconds), intervals)
+
+def isValidTime(time):
+  if (time >= "09_00_00" and time <= "11_30_00" ): return True
+  if (time >= "13_00_00" and time <= "14_45_00" ): return True
+  return False
+
+def extractTime(file):
+    timeString = file[file.find("2020") + 4:file.find(".json")]
+    hour, minute, second = mmap(int, timeString.split("_"))
+    if len(timeString) == len("9_59_59"):
+        timeString = "0" + timeString
+    return timeString

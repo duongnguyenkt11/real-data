@@ -34,8 +34,8 @@ if __name__ == '__main__':
 # cleansed = truncDataDict(o.cleansed, 3000, 6000)
 # writePickle("/home/sotola/HOSE-3k-sample(2020-10-23).pickle")
 #%%
-# tik(); o = O(loadSamplePrickle()); tok()
-o = O(loadCleansedData())
+tik(); o = O(loadSamplePrickle()); tok()
+# tik(); o = O(loadCleansedData()); tok()
 tik(); o.calculateNNVolumes(); tok();tik(); o.calculateNNValues(); tok();o.numpyItUp();o.calculateTradedValues();
 _o = o
 #%%

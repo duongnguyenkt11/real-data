@@ -47,3 +47,8 @@ class KEYS:
     HOSE_SNAPSHOT = 'hoseSnapShot'
     BUY_PRESSURE  = 'buyPressure'
     SELL_PRESSURE = 'sellPressure'
+
+class PARSER:
+    FOO = "foo"
+    PS_DATA_DIRECTORY = "/home/sotola/data/"
+
